@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabuada</title>
+    <script>
+        function tabuada() {
+            const base = document.getElementById("txtBase").value;
+            let resultado = 0
+            const tabela = document.getElementById("tabela");
+            tabela.innerHTML = "";
+            for (let contador = 0; contador < 101; contador++) {
+                resultado = base * contador;
+                tabela.innerHTML += `<div><p>${base} x ${contador} = ${resultado}</p></div>`
+            }
+
+        }
+    
+    </script>
+
+    <style>
+        body {
+            text-align: center;
+            padding: none;
+            width: 20%;
+            margin: auto;
+            border: double 1px black;
+            border-radius: 5px;
+            background-color: rgb(15, 111, 150);
+        }
+
+        form,
+        div {
+            padding: 5px;
+            background-color: rgb(40, 160, 160)
+        }
+
+        div {
+            border: solid black 1px;
+            background-color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <form action="">
+        <label for="">Insira a base da tabuada: </label>
+        <input type="number" id="txtBase" onchange="tabuada();">
+    </form>
+    <div id="tabela"></div>
+</body>
+
+</html>
